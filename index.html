@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>WebRTC 1v1连麦视频</title>
   </head>
   <body>
-    <div>123</div>
+    <div>
+      <div><video id="local"></video></div>
+      <div><video id="remote"></video></div>
+      <button id="push">本地推流</button>
+      <button id="pull">远端拉流</button>
+    </div>
     <script src="umd.js" type="module"></script>
+    <script>
+      window.onload = function() {
+        console.log(likeRTC);
+      }
+    </script>
   </body>
 </html>

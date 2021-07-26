@@ -38,13 +38,5 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "RTC/*",
-      "Media/*",
-      "node_modules/*"
-    ],
-    "delay": 1000
   }
 }

@@ -1,10 +1,11 @@
+// https://www.rollupjs.com/guide/big-list-of-options
 const version = require("./package.json").version;
 export default {
-  input: "index.js",
+  input: "src/index.js",
   plugins: [],
   output: [
     {
-      file: "dist/bundle.js",
+      file: "dist/index.js",
       format: "esm",
       //   paths: {},
       //   indent: "--no-indent",

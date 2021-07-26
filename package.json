@@ -2,12 +2,12 @@
   "name": "like-rtc",
   "version": "1.0.0",
   "description": "WebRTC API",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "npm-run-all --serial dev",
-    "dev": "rollup -w -c",
-    "build:esm": "rollup -c",
-    "serve": "browser-sync start --server --files index.html",
+    "start": "npm-run-all --parallel dev serve",
+    "dev": "rollup -w -c scripts/rollup.dev.js",
+    "build:esm": "rollup -c rollup.config.js",
+    "serve": "browser-sync start --server --files **/index.html",
     "prepare": "husky install"
   },
   "repository": {

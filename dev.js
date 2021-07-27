@@ -38,8 +38,38 @@
   // https://developer.mozilla.org/zh-CN/docs/Web/API/DOMException
 
   /**
+   * 媒体流相关
+   * 流对象列表
+   */
+
+  var streamMap$1 = new Map(); // export const streamIdSet = new Set();
+
+  // https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream
+  function setStreamMap(stream) {
+    var id = stream.id;
+
+    if (!streamMap$1.has(id)) {
+      streamMap$1.set(stream.id, stream);
+    }
+  }
+  function getStreamMap(id) {
+    return streamMap$1.get(id);
+  }
+  function hasStreamMap(id) {
+    return streamMap$1.has(id);
+  }
+  function deleteStreamMap(id) {
+    streamMap$1["delete"](id);
+  }
+  function clearStreamMap() {
+    streamMap$1.clear();
+  }
+  function sizeStreamMap() {
+    return streamMap$1.size;
+  }
+
+  /**
    * 媒体设备相关
-   * 事件、方法、回调
    */
   // addEventListener
 
@@ -77,12 +107,23 @@
       })
       ["catch"](handler);
   }
+  function streamMap() {
+    return {
+      setStreamMap: setStreamMap,
+      getStreamMap: getStreamMap,
+      hasStreamMap: hasStreamMap,
+      deleteStreamMap: deleteStreamMap,
+      clearStreamMap: clearStreamMap,
+      sizeStreamMap: sizeStreamMap,
+    };
+  }
 
   exports.getDisplayMedia = getDisplayMedia;
   exports.getEnumerateDevices = getEnumerateDevices;
   exports.getSupportedConstraints = getSupportedConstraints;
   exports.getUserMedia = getUserMedia;
   exports.ondevicechange = ondevicechange;
+  exports.streamMap = streamMap;
 
   Object.defineProperty(exports, "__esModule", { value: true });
 });

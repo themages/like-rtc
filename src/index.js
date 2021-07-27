@@ -7,7 +7,6 @@ import {
 } from "./media/interfaces/devices.js";
 /**
  * 媒体设备相关
- * 事件、方法、回调
  */
 // addEventListener
 export function ondevicechange(listener) {
@@ -38,4 +37,25 @@ export function getUserMedia({ handler, constraints }) {
       handler(null, res);
     })
     .catch(handler);
+}
+/**
+ * 媒体流相关
+ */
+import {
+  setStreamMap,
+  getStreamMap,
+  hasStreamMap,
+  deleteStreamMap,
+  clearStreamMap,
+  sizeStreamMap,
+} from "./media/interfaces/stream";
+export function streamMap() {
+  return {
+    setStreamMap,
+    getStreamMap,
+    hasStreamMap,
+    deleteStreamMap,
+    clearStreamMap,
+    sizeStreamMap,
+  };
 }

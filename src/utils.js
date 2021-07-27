@@ -25,3 +25,10 @@ export function readonly(obj = {}) {
     console.warn("实例：%o，方法名：%s，出错信息：%o", instance, attr, error);
   }
 }
+
+/**
+ * 媒体流相关
+ * 流对象列表
+ */
+export const streamMap = new Map();
+// export const streamIdSet = new Set();

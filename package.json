@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel dev serve",
-    "dev": "rollup -w -c scripts/rollup.umd.js",
+    "dev": "rollup -w -c scripts/rollup.dev.js",
     "build:esm": "rollup -c scripts/rollup.esm.js",
     "build:umd": "rollup -c scripts/rollup.umd.js",
     "serve": "browser-sync start --server --files **/index.html",

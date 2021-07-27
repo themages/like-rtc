@@ -1,21 +1,23 @@
-/* like-rtc version 1.0.0 */
-(function (global, factory) {
-  typeof exports === "object" && typeof module !== "undefined"
-    ? factory(exports)
-    : typeof define === "function" && define.amd
-    ? define(["exports"], factory)
-    : ((global =
-        typeof globalThis !== "undefined" ? globalThis : global || self),
-      factory((global.likeRTC = {})));
-})(this, function (exports) {
+!(function (e, n) {
+  "object" == typeof exports && "undefined" != typeof module
+    ? n(exports)
+    : "function" == typeof define && define.amd
+    ? define(["exports"], n)
+    : n(
+        ((e =
+          "undefined" != typeof globalThis ? globalThis : e || self).likeRTC =
+          {}),
+      );
+})(this, function (e) {
   "use strict";
-
-  function test() {
-    return "123";
+  function n() {
+    return "devicechange";
   }
-
-  exports.test = test;
-
-  Object.defineProperty(exports, "__esModule", { value: true });
+  (e.device = function () {
+    return n;
+  }),
+    (e.test = function () {
+      return "123";
+    }),
+    Object.defineProperty(e, "__esModule", { value: !0 });
 });
-/* follow me on https://github.com/tankan */

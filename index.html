@@ -8,16 +8,44 @@
   </head>
   <body>
     <div>
-      <div><video id="local"></video></div>
-      <div><video id="remote"></video></div>
+      <div><video id="local" width="360"></video></div>
+      <div><video id="remote" width="360"></video></div>
+      <div><video id="share" width="360"></video></div>
       <button id="push">本地推流</button>
       <button id="pull">远端拉流</button>
+      <button id="screen">本地共享</button>
     </div>
-    <script src="umd.js" type="module"></script>
+    <script src="dev.js" type="module"></script>
     <script>
-      window.onload = function() {
-        console.log(likeRTC);
-      }
+      window.onload = function () {
+        const screen = document.getElementById("screen");
+        screen.addEventListener("click", function () {
+          likeRTC.getDisplayMedia({
+            handler: function (err, stream) {
+              const { id } = stream;
+              const { setStreamMap, getStreamMap } = likeRTC.streamMap();
+              setStreamMap(stream);
+              console.log(err, stream);
+              const video = document.getElementById("share");
+              video.srcObject = getStreamMap(id);
+              video.onloadedmetadata = function (e) {
+                video.play();
+              };
+            },
+            constraints: { audio: true, video: true },
+          });
+        });
+        likeRTC.ondevicechange({
+          listener: function (event) {
+            console.log(event);
+          },
+        });
+        likeRTC.getEnumerateDevices({
+          handler: function (err, result) {
+            console.log(err, result);
+          },
+        });
+      };
     </script>
   </body>
 </html>

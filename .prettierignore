@@ -1,6 +1,6 @@
 build
 coverage
 node_modules
-dist
-index.js
-umd.js
+/dist
+/index.js
+/umd.js

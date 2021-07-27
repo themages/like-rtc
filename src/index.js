@@ -26,15 +26,15 @@ export function getEnumerateDevices({ handler }) {
 }
 export function getDisplayMedia({ handler, constraints }) {
   displayMedia(constraints)
-    .then((res) => {
-      handler(null, res);
+    .then((stream) => {
+      handler(null, stream);
     })
     .catch(handler);
 }
 export function getUserMedia({ handler, constraints }) {
   userMedia(constraints)
-    .then((res) => {
-      handler(null, res);
+    .then((stream) => {
+      handler(null, stream);
     })
     .catch(handler);
 }
@@ -59,3 +59,6 @@ export function streamMap() {
     sizeStreamMap,
   };
 }
+/**
+ * RTCPeerConnection 连接相关
+ */

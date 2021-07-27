@@ -93,8 +93,8 @@
     var handler = _ref2.handler,
       constraints = _ref2.constraints;
     displayMedia(constraints)
-      .then(function (res) {
-        handler(null, res);
+      .then(function (stream) {
+        handler(null, stream);
       })
       ["catch"](handler);
   }
@@ -102,8 +102,8 @@
     var handler = _ref3.handler,
       constraints = _ref3.constraints;
     userMedia(constraints)
-      .then(function (res) {
-        handler(null, res);
+      .then(function (stream) {
+        handler(null, stream);
       })
       ["catch"](handler);
   }
@@ -117,6 +117,9 @@
       sizeStreamMap: sizeStreamMap,
     };
   }
+  /**
+   * RTCPeerConnection 连接相关
+   */
 
   exports.getDisplayMedia = getDisplayMedia;
   exports.getEnumerateDevices = getEnumerateDevices;

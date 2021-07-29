@@ -1,0 +1,34 @@
+1. 支持约束属性：supportedConstraints
+2. 输入输出设备：camera/microphone/speaker
+3. 输入设备属性：equipmentConstraints
+4. 设置视频码率：videoBitrate
+
+创建本地流：createLocalStream
+推送本地流：publishLocalStream
+取消推送本地流：unPublishLocalStream
+结束本地流：closeLocalStream
+
+创建共享流：createShareStream
+推送桌面共享：publishShareStream
+关闭桌面共享：unPubShareStream
+
+关闭本地流视频：pauseLocalStream
+开启本地流视频：playLocalStream
+关闭本地流声音：pauseLocalStreamAudio
+开启本地流声音：playLocalStreamAudio
+关闭本地流视频画面：pauseLocalStreamVideo
+开启本地流视频画面：playLocalStreamVideo
+
+
+订阅远程流：subRemoteStream
+取消订阅远程流：unSubRemoteStream
+结束远程流：closeRemoteStreams
+
+创建视频流：createVideoStream
+创建音频流：createAudioStream
+
+暂停订阅视频：unSubVideo
+恢复订阅视频：reSubVideo
+
+暂停订阅音频：unSubAudio
+恢复订阅音频：reSubAudio
